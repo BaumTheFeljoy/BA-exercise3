@@ -106,10 +106,11 @@ public class TemplateMatcherCorrCoef extends TemplateMatcherBase {
                             double kernelValue = distanceMap[kernelY][kernelX];
                             if(kernelValue > value) {
                                 maxFound = true;
+                                break outerKernel;
                             }
                         }
                     }
-                    if(!maxFound) result.add(new Point(y, x));
+                    if(!maxFound) result.add(new Point(y, x)); // y & x order is intentional
                 }
             }
         }
